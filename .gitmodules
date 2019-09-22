@@ -1,3 +1,3 @@
-[submodule "deno-submodules-tests"]
-	path = deno-submodules-tests
-	url = git@github.com:vihuvac/deno-submodules-tests.git
+[submodule "vihuvac.github.io"]
+	path = vihuvac.github.io
+	url = git@github.com:vihuvac/vihuvac.github.io.git
