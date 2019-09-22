@@ -1,8 +1,8 @@
-import { logger } from 'https://vihuvac.github.io/logger/logger_v1.ts';
+import { logger } from 'https://vihuvac.github.io/features/deno/logger/logger_v1.ts';
 
 
 (async () => {
-  const logger2 = await import('https://vihuvac.github.io/logger/logger_v2.ts');
+  const logger2 = await import('https://vihuvac.github.io/features/deno/logger/logger_v2.ts');
 
   logger('hello world!');
 
