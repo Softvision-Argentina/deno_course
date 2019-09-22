@@ -1,3 +1,4 @@
 [submodule "vihuvac.github.io"]
 	path = vihuvac.github.io
-	url = git@github.com:vihuvac/vihuvac.github.io.git
+	url = git@github.com:vihuvac/vihuvac.github.io.gi
+  branch = master
