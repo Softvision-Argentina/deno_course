@@ -21,6 +21,12 @@ Clone the repo from Github. Since this project has some submodules used to perfo
 git clone --recurse-submodules git@github.com:vihuvac/deno-tests.git
 ```
 
+After cloning the repo and its submodules, sometimes the submodules branches may be changed due to some updates, so in order to start working in the respective branch, we might run:
+
+```shell
+git submodule foreach 'git checkout master'
+```
+
 ### Start everything up
 
 #### Module inclusions
