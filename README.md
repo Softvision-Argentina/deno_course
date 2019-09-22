@@ -31,16 +31,18 @@ git submodule foreach 'git checkout master'
 
 #### Module inclusions
 
-All the testing modules must be located within the `vihuvac.github.io` directory, each feature must be located in its respective directory named with the feature name, e.g:
+All the feature modules must be located within the `vihuvac.github.io/features/deno` directory, each feature must be located in its respective directory named with the feature name, e.g:
 
-* For the _logger feature_, the main module is located in a _logger sub-directory_ within `vihuvac.github.io`.
+* For the _logger feature_, the main module is located in a _logger sub-directory_ within `vihuvac.github.io/features/deno`.
 
 ```markdown
 deno-tests/
 └── vihuvac.github.io/
-    └── logger/
-    ├── logger_v1.ts
-    └── logger_v2.ts
+    └── features/
+        └── deno/
+            └── logger/
+                ├── logger_v1.ts
+                └── logger_v2.ts
 ```
 
 Once the feature has been added and pushed within the submodule, the new script using this module must import it using its public URL, e.g:
@@ -48,6 +50,16 @@ Once the feature has been added and pushed within the submodule, the new script 
 * The _logger.ts_ script imports the _logger_ feature from its public URL.
 
 ```typescript
-import { logger } from 'https://vihuvac.github.io/logger/logger_v1.ts';
+import { logger } from 'https://vihuvac.github.io/features/deno/logger/logger_v1.ts';
 ...
 ```
+
+#### Module tests
+
+In order to test a new feature, allowing the testing script run with a net connection and read access, just run:
+
+```shell
+deno --allow-net --allow-read logger.ts
+```
+
+Find out more on [Deno Official Website](https://deno.land/ "Deno's Official Website").
