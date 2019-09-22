@@ -1,0 +1,3 @@
+[submodule "deno-submodules-tests"]
+	path = deno-submodules-tests
+	url = git@github.com:vihuvac/deno-submodules-tests.git
