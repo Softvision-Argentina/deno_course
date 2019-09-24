@@ -26,7 +26,7 @@ import { bgYellow, gray, bold } from 'https://deno.land/std/fmt/colors.ts';
 
   // Print results.
   console.log('Printing the results of the operations:');
-  console.log('add(2, 2) =>', addOp);
+  console.log(bgYellow(gray(bold(`add(2, 2) => ${addOp}`))));
   console.log('subtract(4, 2) =>', subtractOp);
   console.log('multiply(4, 4) =>', multiplyOp);
   console.log('divide(10, 2) =>', divideOp);
