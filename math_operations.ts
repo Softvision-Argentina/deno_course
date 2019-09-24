@@ -9,6 +9,7 @@ import {
 } from 'https://vihuvac.github.io/features/deno/math/operations_v1.ts';
 import {
   add as adder,
+  calculate,
 } from 'https://vihuvac.github.io/features/deno/math/operations_v2.ts';
 import { bgYellow, gray, bold } from 'https://deno.land/std/fmt/colors.ts';
 
@@ -23,6 +24,7 @@ import { bgYellow, gray, bold } from 'https://deno.land/std/fmt/colors.ts';
   const multiplyOp = multiply(4, 4);
   const divideOp = divide(10, 2);
   const adderOp = adder(2, 2);
+  const calculateOp = calculate('add', 2, 2);
 
   // Print results.
   console.log('Printing the results of the operations:');
@@ -31,4 +33,5 @@ import { bgYellow, gray, bold } from 'https://deno.land/std/fmt/colors.ts';
   console.log('multiply(4, 4) =>', multiplyOp);
   console.log('divide(10, 2) =>', divideOp);
   console.log(bgYellow(gray(bold(`adder(2, 2) => ${adderOp}`))));
+  console.log(bgYellow(gray(bold(`calculate('add', 2, 2) => ${calculateOp}`))));
 })();
