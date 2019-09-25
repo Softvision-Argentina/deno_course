@@ -1,5 +1,5 @@
-Deno Tests
-==========
+Deno Course
+===========
 
 This small project has been created in order to test some Deno features, and some basic concepts and relevant matters related to runtime.
 
@@ -18,7 +18,7 @@ This small project has been created in order to test some Deno features, and som
 Clone the repo from Github. Since this project has some submodules used to perform all the necessary tests, the `git clone` command must be performed using the `--recurse-submodules` flag, e.g:
 
 ```shell
-git clone --recurse-submodules git@github.com:vihuvac/deno-tests.git
+git clone --recurse-submodules git@github.com:Softvision-Argentina/deno_course.git
 ```
 
 After cloning the repo and its submodules, sometimes the submodules branches may be changed due to some updates, so in order to start working in the respective branch, we might run:
@@ -36,7 +36,7 @@ All the feature modules must be located within the `vihuvac.github.io/features/d
 * For the _logger feature_, the main module is located in a _logger sub-directory_ within `vihuvac.github.io/features/deno`.
 
 ```markdown
-deno-tests/
+deno_course/
 └── vihuvac.github.io/
     └── features/
         └── deno/
