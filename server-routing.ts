@@ -10,25 +10,10 @@ import {
     yellow
   } from "https://deno.land/std@v0.17.0/fmt/colors.ts";
   
-import { Application, Context, Router, Status } from "./mod.ts";
+import { Application, Context, Router, Status } from 'https://deno.land/x/oak/mod.ts';
 
 import { readFileStr, writeFileStr } from 'https://deno.land/std/fs/mod.ts';
 
-  
-  interface Book {
-    id: string;
-    title: string;
-    author: string;
-  }
-  
-  const books = new Map<string, Book>();
-  
-  books.set("1234", {
-    id: "1234",
-    title: "The Hound of the Baskervilles",
-    author: "Conan Doyle, Author"
-  });
-  
   function notFound(context: Context) {
     context.response.status = Status.NotFound;
     context.response.body = `<html><body><h1>404 - Not Found</h1><p>Path <code>${
@@ -41,16 +26,6 @@ import { readFileStr, writeFileStr } from 'https://deno.land/std/fs/mod.ts';
     router
       .get("/", (context, next) => {
         context.response.body = "Hello world!";
-      })
-      .get("/book", async (context, next) => {
-        context.response.body = Array.from(books.values());
-      })
-      .get<{ id: string }>("/book/:id", async (context, next) => {
-        if (context.params && books.has(context.params.id)) {
-          context.response.body = books.get(context.params.id);
-        } else {
-          return notFound(context);
-        }
       })
       .get("/read", async (context, next) => {
         const text = await readFileStr('characters.txt');

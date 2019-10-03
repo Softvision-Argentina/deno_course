@@ -1,9 +1,11 @@
+//Import file i/o methods
 import { readFileStr, writeFileStr } from 'https://deno.land/std/fs/mod.ts';
 
 const main = async () => {
+    //Read the file
     let text = await readFileStr('characters.txt');
-    console.log(text);
 
+    //Hit API
     const stCharacters = await fetch(`https://swapi.co/api/people/${Deno.args[1]}`, {
         method: 'GET',
         headers: {
@@ -11,12 +13,10 @@ const main = async () => {
         },
       });
     let stCharactersData = await stCharacters.json();
+    //Write file
     await writeFileStr('characters.txt', `${text}, ${stCharactersData.name}`);
 
     text = await readFileStr('characters.txt');
-    console.log(text);
-
-      console.log(Deno.args)
 
     return;
 };
